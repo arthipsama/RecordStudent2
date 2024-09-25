@@ -89,9 +89,13 @@ export class TableComponent implements OnInit {
     });
   }
 
-  applyFilter(): void {
-    this.dataSource = this.students.filter(student =>
-      student.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+  searchStudents(): void {
+    const term = this.searchTerm.toLowerCase();
+    const allStudents = this.tableService.getStudents(); // โหลดข้อมูลนักเรียนทั้งหมด
+
+    // ค้นหานักเรียนที่ชื่อตรงกับที่ค้นหา
+    this.dataSource = allStudents.filter(student =>
+      student.name.toLowerCase().includes(term)
     );
   }
 }

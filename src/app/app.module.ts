@@ -6,6 +6,9 @@ import { TableModule } from './Page/table/table.module';
 import { TableComponent } from './Page/table/table.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { DialogModule } from './Page/dialog/student-dialog/student-dialog.module';
+import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import { DialogModule } from './Page/dialog/student-dialog/student-dialog.module
     AppRoutingModule,
     TableModule,
     DialogModule,
+    FormsModule,
+    MatDialogModule,
+    MatInputModule,
   ],
   providers: [
     provideClientHydration(),
