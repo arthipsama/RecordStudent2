@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { TableModule } from './Page/table/table.module';
 import { TableComponent } from './Page/table/table.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { DialogModule } from './Page/dialog/student-dialog/student-dialog.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     BrowserModule,
     AppRoutingModule,
     TableModule,
+    DialogModule,
   ],
   providers: [
     provideClientHydration(),
