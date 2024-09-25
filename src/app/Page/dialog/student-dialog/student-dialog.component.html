@@ -1,1 +1,23 @@
-<p>student-dialog works!</p>
+<h2 mat-dialog-title>
+  {{ dialogType === 'add' ? 'เพิ่มนักเรียน' : dialogType === 'edit' ? 'แก้ไขนักเรียน' : 'ดูข้อมูลนักเรียน' }}
+</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>ชื่อ</mat-label>
+    <input matInput [(ngModel)]="student.name" [readonly]="isReadOnly" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>ที่อยู่</mat-label>
+    <input matInput [(ngModel)]="student.address" [readonly]="isReadOnly" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>คะแนน</mat-label>
+    <input type="number" matInput [(ngModel)]="student.score" [readonly]="isReadOnly" />
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">ปิด</button>
+  <button mat-button (click)="save()" *ngIf="dialogType === 'edit' || dialogType === 'add' && !isReadOnly">บันทึก</button>
+</mat-dialog-actions>

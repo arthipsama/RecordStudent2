@@ -2,7 +2,7 @@
   <div class="table-header">
     <h2 class="title">Students Details</h2>
     <!-- <button mat-raised-button color="primary" class="add-student-btn">Add New Student</button> -->
-    <button class="add-button" type="button">Add New Student</button>
+    <button class="add-button" type="button" (click)="openDialog()">Add New Student</button>
   </div>
 
   <hr class="divider">
@@ -31,13 +31,13 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Action </th>
       <td mat-cell *matCellDef="let element">
-        <button mat-icon-button>
+        <button mat-icon-button (click)="viewStudent(element)">
           <mat-icon>visibility</mat-icon>
         </button>
-        <button mat-icon-button>
+        <button mat-icon-button (click)="editStudent(element)">
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-icon-button>
+        <button mat-icon-button (click)="deleteStudent(element)">
           <mat-icon>delete</mat-icon>
         </button>
       </td>
